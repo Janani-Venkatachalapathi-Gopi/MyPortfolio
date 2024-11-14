@@ -1,156 +1,345 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-*{
-    font-family: "Lora", serif;
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color: #fbe3ed;
+
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fbe3ed; /* Set body background color */
 }
-/* Additional Styling */
-.navbar, footer {
-  background-color: #fff;
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6,.navbar-brand,footer,.navbar-nav .nav-link,.navbar-nav .nav-link:hover,.card-footer i,.navbar-toggler-icon {
+    color: #fa0759; /* Set heading color */
 }
-.navbar-toggler-icon{
-    margin-top: 10px;
+/* Navbar Styles */
+/* Navbar Styles */
+.navbar, .footer {
+    background-color: #fff; /* White background for navbar and footer */
 }
-.navbar-brand{font-weight: 600;}
-.navbar-brand,.navbar-toggler-icon,.navbar-nav .nav-link,footer p {
-    font-size: 18px;
-    color: #fa0759!important; /* Highlight color */
+
+.navbar-brand {
+    font-size: 1.5rem;
 }
-.navbar-nav .nav-link:hover {
-    color: #fa0759; /* Highlight color */
+
+.navbar-nav .nav-link {
+    transition: color 0.3s;
 }
-section {
+
+
+/* Home Section */
+#home {
+    position: relative;
+    text-align: center;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banner.jpg') no-repeat center center/cover;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-}
-h1,h5,.card-title,.icons{
-    color: #f60456;
-}
-#home
-{
-    position: relative;
-}
-.profile{
-    position: absolute;
-    top: 30%;
-}
-#home h1{
-    position: absolute;
-    top: 60%;
-}
-.profile{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-}
-#home .banner{
-    opacity: 0.2;
-    width: 100%;
-    height: 100%;
-}
-.card{
-    margin-bottom: 20px;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-border-radius: 10px;
+    flex-direction: column;
 }
 
-.card img{
-    height: 380px;
+.banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
-.card-body{
-    padding: 20px 10px;
-    
+
+.profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-bottom: 1rem;
 }
-.card-body h5{
-    margin: 15px 0;
+
+.name {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
-p{
-    font-size: 15px;
-    text-align: left;
+
+/* About Section */
+#about {
+    padding: 3rem 0;
+    background-color: #f8f9fa;
 }
-.key-features li{
-    font-size: 14px;
-    text-align: left;
-    list-style: none;
+#about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
-.card-footer div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;   
+
+/* Accordion Styles */
+.accordion-button {
+    background-color: #fbe3ed;
+    color: #fa0759;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
-.card-footer p,.card-footer a{
-    font-size: 14px;
-}
-.card-footer .btn{
-  background-color: #fa0759 ; 
-  color: #fff; 
-}
-.card-footer .btn:hover{
-    background-color: #fff ; 
-    color:  #fa0759; 
-    border: 1px solid #f60456;
-  }
-  #contact .icons{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  #contact button {
-   border-radius: 50%;
-   padding: 10px 15px;
+
+.accordion-button:not(.collapsed) {
+    background-color: #fbe3ed; /* Set open accordion header background color */
   
 }
-.linked, .call, .mail, .insta,.git{
-    background-color: #fff;
+
+.accordion-body p {
+    margin: 0;
 }
-.linked:hover, .linked:hover i,.call:hover, .call:hover i,.mail:hover, .mail:hover i,.git:hover, .git:hover i,.insta:hover, .insta:hover i{   
-    color: white;
+
+.accordion-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
 }
-.linked{
-    border: 2px solid #0463f6;
+.accordion-body ul li {
+    padding: 0.25rem 0;
 }
-.linked:hover, .linked:hover i{  
-    background-color:#0463f6 ;
+
+/* Project Section */
+#project {
+    padding: 3rem 0;
 }
-.call i{
-    color: #087e26;
+
+#project h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
 }
+
+.card {
+    margin-bottom: 2rem;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.key-features {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.key-features li {
+    display: flex;
+    align-items: center;
+}
+
+.key-features li::before {
+    content: '✔';
+    color: #28a745;
+    margin-right: 0.5rem;
+}
+.card-footer .btn {
+    background-color: #fa0759;
+    color: #fbe3ed;
+    border: none; /* Optional, if you want to remove any border */
+    transition: all 0.3s ease; /* Smooth transition effect */
+}
+
+.card-footer .btn:hover {
+    background-color: #fbe3ed;
+    color: #fa0759;
+    border: 2px solid #fa0759; /* Optional: adds border on hover */
+}
+
+/* Contact Section */
+#contact {
+    background-color: #f8f9fa;
+    padding: 3rem 0;
+}
+
+#contact h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+/* Font Icon Styles */
+.linked, .call, .mail, .insta, .git {
+    background-color: #fff; /* Set background color to white for all icons */
+    border-radius: 50%; /* Make icons round */
+    padding: 15px; /* Add padding inside the circle */
+    display: inline-flex; /* Use flex to align items */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    margin: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and color */
+    font-size: 24px; /* Icon size */
+    width: 50px; /* Set fixed width for the circle */
+    height: 50px; /* Set fixed height for the circle */
+    text-align: center; /* Align the icon in the center */
+}
+
+/* Hover Effects for Icons */
+.linked:hover, .linked:hover i,
+.call:hover, .call:hover i,
+.mail:hover, .mail:hover i,
+.git:hover, .git:hover i,
+.insta:hover, .insta:hover i {
+    color: white; /* Change icon color to white on hover */
+}
+
+/* LinkedIn Icon */
+.linked {
+    color: #0463f6;
+    border: 2px solid #0463f6; /* Set LinkedIn border color */
+}
+
+.linked:hover {
+    background-color: #0463f6; /* Change background color on hover */
+}
+
+/* Call Icon */
 .call {
-    border: 2px solid #087e26;
+    border: 2px solid #087e26; /* Set Call border color */
 }
-.call:hover, .call:hover a{
-    background-color:#087e26 ;
+
+.call i {
+    color: #087e26; /* Set Call icon color */
 }
+
+.call:hover {
+    background-color: #087e26; /* Change background color on hover */
+}
+
+/* Mail Icon */
 .mail {
-    border: 2px solid #e02f0f;
+    border: 2px solid #e02f0f; /* Set Mail border color */
 }
-.mail i{
-    color: #e02f0f;
+
+.mail i {
+    color: #e02f0f; /* Set Mail icon color */
 }
-.mail:hover, .mail:hover i{
-    background-color: #e02f0f;
+
+.mail:hover {
+    background-color: #e02f0f; /* Change background color on hover */
 }
-.git{
-    border: 2px solid black;
+
+/* GitHub Icon */
+.git {
+    border: 2px solid black; /* Set GitHub border color */
 }
-.git i{
-    color: black;
+
+.git i {
+    color: black; /* Set GitHub icon color */
 }
-.git:hover, .git:hover i{
-    background-color: black;
+
+.git:hover {
+    background-color: black; /* Change background color on hover */
 }
+
+/* Instagram Icon */
 .insta {
-    border: 2px solid #cb1964;
+    border: 2px solid #cb1964; /* Set Instagram border color */
 }
-.insta  i{
-    color: #cb1964;
+
+.insta i {
+    color: #cb1964; /* Set Instagram icon color */
 }
-.insta:hover, .insta:hover i{
-    background-color: #cb1964;
+
+.insta:hover {
+    background-color: #cb1964; /* Change background color on hover */
 }
-  #contact button a{
-font-size: 16px;
-  }
+
+/* Footer Styles */
+footer {
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    #home {
+        height: 60vh;
+    }
+
+    .profile {
+        width: 120px;
+        height: 120px;
+    }
+
+    .name {
+        font-size: 1.5rem;
+    }
+
+    #about, #project, #contact {
+        padding: 2rem 1rem;
+    }
+
+    #about h1, #project h1, #contact h1 {
+        font-size: 1.75rem;
+    }
+
+    .card img {
+        height: 150px;
+    }
+
+    .icons button {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 1rem;
+    }
+
+    .profile {
+        width: 100px;
+        height: 100px;
+    }
+
+    .name {
+        font-size: 1.25rem;
+    }
+
+    #about h1, #project h1, #contact h1 {
+        font-size: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .icons button {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+}
